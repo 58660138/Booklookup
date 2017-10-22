@@ -5,25 +5,25 @@ function Booklookup(mocktest) {
         var obj = this.mocktest(isbn)
         return {
             bookName :'Color of the wind',
-            cover :'ewtwt.bng'
+            cover :'ewtwt.bng',
             isbn: 'is123456789'
         }
     }
 }
 
-test('Test Booklookup'=>(){
-  var info  {
+test('Test Booklookup',()=>{
+  var info = {
         title: 'Color of the wind',
         image: 'thevoice.jpg',
-        isbn: 'is123456789'
+        isbn:  'is123456789'
     }
 
-  var obj {
+  var obj ={
       bookName :'Color of the wind',
-      cover :'ewtwt.bng'
-      isbn: 'is123456789'
+      cover :   'ewtwt.bng',
+      isbn:     'is123456789'
   }
-  const AmazonService =  jest.fn(isbn).mockReturnValue(info)
+  const AmazonService =  jest.fn('is123456789').mockReturnValue(info)
 
 
   let app = new Booklookup(AmazonService)
@@ -31,8 +31,9 @@ test('Test Booklookup'=>(){
 
 
   expect(AmazonService).toHaveBeenCalled()
-  expect(facebookAuthMock).toHaveBeenCalledWith(isbn)
-  expect(value).toEqual(info)
+  expect(AmazonService).toHaveBeenCalledWith('is123456789')
+
+  expect(value).toEqual(obj)
 
 
 
