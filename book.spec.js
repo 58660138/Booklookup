@@ -17,13 +17,22 @@ test('Test Booklookup'=>(){
         image: 'thevoice.jpg',
         isbn: 'is123456789'
     }
+
+  var obj {
+      bookName :'Color of the wind',
+      cover :'ewtwt.bng'
+      isbn: 'is123456789'
+  }
   const AmazonService =  jest.fn(isbn).mockReturnValue(info)
 
 
   let app = new Booklookup(AmazonService)
   let value = app.serachAmazon('is123456789')
 
-  expect(value).toEqual(returnObject)
+
+  expect(AmazonService).toHaveBeenCalled()
+  expect(facebookAuthMock).toHaveBeenCalledWith(isbn)
+  expect(value).toEqual(info)
 
 
 
