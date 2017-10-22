@@ -1,0 +1,19 @@
+{
+  "name": "booklookup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "book.spec.js",
+  "scripts": {
+    "test": "/node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/58660138/Booklookup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/58660138/Booklookup/issues"
+  },
+  "homepage": "https://github.com/58660138/Booklookup#readme"
+}
