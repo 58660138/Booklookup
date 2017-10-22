@@ -1,16 +1,15 @@
 function Booklookup(mocktest) {
     this.mocktest = mocktest
 
-    this.serachAmazon = (isbn) => {
+    this.serach = (isbn) => {
         var obj = this.mocktest(isbn)
         return {
-            bookName :'Color of the wind',
-            cover :'ewtwt.bng',
-            isbn: 'is123456789'
+            bookName : obj.title,
+            cover :obj.image,
+            isbn:obj.isbn
         }
     }
 }
-
 test('Test Booklookup',()=>{
   var info = {
         title: 'Color of the wind',
@@ -18,22 +17,22 @@ test('Test Booklookup',()=>{
         isbn:  'is123456789'
     }
 
-  var obj ={
+  var returnobj ={
       bookName :'Color of the wind',
-      cover :   'ewtwt.bng',
+      cover :   'thevoice.jpg',
       isbn:     'is123456789'
   }
   const AmazonService =  jest.fn('is123456789').mockReturnValue(info)
 
 
   let app = new Booklookup(AmazonService)
-  let value = app.serachAmazon('is123456789')
+  let value = app.serach('is123456789')
 
 
   expect(AmazonService).toHaveBeenCalled()
   expect(AmazonService).toHaveBeenCalledWith('is123456789')
 
-  expect(value).toEqual(obj)
+  expect(value).toEqual(returnobj)
 
 
 
