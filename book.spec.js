@@ -31,6 +31,8 @@ test('Test Booklookup',()=>{
 
   expect(AmazonService).toHaveBeenCalled()
   expect(AmazonService).toHaveBeenCalledWith('is123456789')
+
+  expect(info.title).toBe('Color of the wind')
   expect(value).toEqual(returnobj)
 
 
